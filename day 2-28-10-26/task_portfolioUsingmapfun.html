@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mahalakshmi Portfolio</title>
+
+    <style>
+        /* Element selector */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6fc;
+            color: #333;
+            margin: 30px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            background-color: #243b55;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #243b55;
+        }
+
+        /* Class selector */
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #cccccc;
+        }
+
+        .skills {
+            background-color: #e8f0fa;
+            padding: 10px 25px;
+            border-radius: 8px;
+        }
+
+        .project {
+            border-left: 4px solid #4a90e2;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #243b55;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #e8f0fa;
+        }
+
+        a {
+            color: #1769aa;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #e67e22;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+        <h1 id="welcome"></h1>
+        <p id="intro"></p>
+    </div>
+
+    <div class="card">
+        <h2>About Me</h2>
+        <p id="about"></p>
+    </div>
+
+    <div class="card">
+        <h2>Personal Details</h2>
+        <div id="personalDetails"></div>
+    </div>
+
+    <div class="card">
+        <h2>My Skills</h2>
+        <ul id="skillsData" class="skills"></ul>
+    </div>
+
+    <div class="card">
+        <h2>My Projects</h2>
+        <div id="projectsData"></div>
+    </div>
+
+    <div class="card">
+        <h2>My Education</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Institution</th>
+                    <th>Year</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody id="eduData"></tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>Contact Me</h2>
+        <div id="contactData"></div>
+    </div>
+
+    <div class="card">
+        <p style="text-align:center;">
+            Thank you for visiting my portfolio!
+        </p>
+    </div>
+
+</div>
+
+<script>
+    // Personal details
+    const personal = {
+        name: "Mahalakshmi Mohan",
+        email: "mahalakshmim22cs042@gmail.com",
+        phone: "9344480177",
+        linkedin: "https://www.linkedin.com/in/mahalakshmi-mohan-b13206321",
+        github: "https://github.com/Mahalakshmi-M22cs042"
+    };
+
+    document.getElementById("welcome").innerHTML =
+        "Welcome to My Portfolio";
+
+    document.getElementById("intro").innerHTML =
+        `Hello! My name is ${personal.name}.`;
+
+    document.getElementById("personalDetails").innerHTML = `
+        <p><b>Name:</b> ${personal.name}</p>
+        <p><b>Email:</b> ${personal.email}</p>
+        <p><b>Phone:</b> ${personal.phone}</p>
+    `;
+
+    // About Me
+    const aboutMe = `I am a motivated and dedicated B.Sc. Computer Science
+    graduate and currently pursuing MCA. I have a strong foundation in
+    programming, databases, and software development. I am seeking an
+    entry-level IT role to use my technical and problem-solving abilities.`;
+
+    document.getElementById("about").innerHTML = aboutMe;
+
+    // Skills array
+    const skills = [
+        "Python",
+        "Java Fundamentals",
+        "Cybersecurity",
+        "RDBMS",
+        "HTML",
+        "JavaScript",
+        "SQL"
+    ];
+
+    // map()
+    document.getElementById("skillsData").innerHTML =
+        skills.map(skill => `<li>${skill}</li>`).join("");
+
+    // filter()
+    const programmingSkills = skills.filter(skill =>
+        ["Python", "Java Fundamentals", "JavaScript"].includes(skill)
+    );
+
+    console.log("Programming Skills:", programmingSkills);
+
+    // Projects array
+    const projects = [
+        {
+            title: "Base Converter Using Python Tkinter",
+            description: "Implemented input validation and error handling for accurate and user-friendly number base conversions."
+        },
+        {
+            title: "AI-Based Campus Placement Management System",
+            description: "A Django and MySQL-based system with student and recruiter portals, resume analysis, skill gap analysis, and placement assistance."
+        }
+    ];
+
+    // map()
+    document.getElementById("projectsData").innerHTML =
+        projects.map((project, index) => `
+            <div class="project">
+                <h3>Project ${index + 1}: ${project.title}</h3>
+                <p>${project.description}</p>
+            </div>
+        `).join("");
+
+    // find()
+    const foundProject = projects.find(project =>
+        project.title.includes("Base Converter")
+    );
+
+    console.log("Found Project:", foundProject);
+
+    // Education array
+    const eduDet = [
+        {
+            Course: "MCA",
+            Institution: "S.A. Engineering College",
+            Year: 2027,
+            Percentage: "75 (up to 2nd sem)"
+        },
+        {
+            Course: "B.Sc. Computer Science",
+            Institution: "Valliammal College for Women",
+            Year: 2025,
+            Percentage: 82
+        },
+        {
+            Course: "HSC",
+            Institution: "Muruga Dhanushkodi Girls Hr. Sec. School",
+            Year: 2022,
+            Percentage: 78
+        },
+        {
+            Course: "SSLC",
+            Institution: "V. Muruga Dhanushkodi Girls Hr. Sec. School",
+            Year: 2020,
+            Percentage: 68
+        }
+    ];
+
+    // map()
+    document.getElementById("eduData").innerHTML =
+        eduDet.map(edu => `
+            <tr>
+                <td>${edu.Course}</td>
+                <td>${edu.Institution}</td>
+                <td>${edu.Year}</td>
+                <td>${edu.Percentage}</td>
+            </tr>
+        `).join("");
+
+    // filter()
+    const filteredEducation = eduDet.filter(edu =>
+        edu.Year === 2022
+    );
+
+    console.log("Education Details from 2022:", filteredEducation);
+
+    // find()
+    const foundEducation = eduDet.find(edu =>
+        edu.Course === "MCA"
+    );
+
+    console.log("MCA Details:", foundEducation);
+
+    // Contact details
+    document.getElementById("contactData").innerHTML = `
+        <p>Email: <a href="mailto:${personal.email}">
+            ${personal.email}</a></p>
+
+        <p>Phone: <a href="tel:${personal.phone}">
+            ${personal.phone}</a></p>
+
+        <p>LinkedIn: <a href="${personal.linkedin}" target="_blank">
+            Visit LinkedIn</a></p>
+
+        <p>GitHub: <a href="${personal.github}" target="_blank">
+            Visit GitHub</a></p>
+    `;
+</script>
+
+</body>
+</html>

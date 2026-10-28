@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Educational Details</title>
+</head>
+<body>
+    <h2>My Educational Details</h2>
+    <table border="1">
+            <tr>
+                <th>Course</th>
+                <th>Institution</th>
+                <th>Year</th>
+                <th>Percentage</th>
+            </tr>
+        <tbody id="eduData"></tbody>
+    </table>
+
+    <script>
+        const eduDet = [
+            {Course: "MCA", Institution: "S.A. Engineering College", Year: 2027, Percentage: "75 (up to 2nd sem)"},
+            {Course: "B.Sc. Computer Science", Institution: "Valliammal College for Women", Year: 2025, Percentage: 82},
+            {Course: "HSC", Institution: "MDGHSS", Year: 2022, Percentage: 78},
+            {Course: "SSLC", Institution: "MDGHSS", Year: 2022, Percentage: 68}
+        ];
+
+        // Using map()
+        document.getElementById("eduData").innerHTML =
+            eduDet.map(edu => `
+                <tr>
+                    <td>${edu.Course}</td>
+                    <td>${edu.Institution}</td>
+                    <td>${edu.Year}</td>
+                    <td>${edu.Percentage}</td>
+                </tr>
+            `).join("");
+
+        // Using filter()
+        const filteredData = eduDet.filter(edu => edu.Year === 2022);
+        console.log("Using filter():", filteredData);
+
+        // Using find()
+        const foundData = eduDet.find(edu => edu.Course === "MCA");
+        console.log("Using find():", foundData);
+    </script>
+
+</body>
+</html>
