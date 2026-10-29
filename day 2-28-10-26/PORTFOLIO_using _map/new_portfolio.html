@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahalakshmi Portfolio</title>
+
+    <style>
+        /* Element selector */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6fc;
+            color: #333;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin: 0;
+        }
+
+        h2 {
+            color: #243b55;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #243b55;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        a {
+            color: #1769aa;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #e67e22;
+            text-decoration: underline;
+        }
+
+        /* Class selector */
+        .header {
+            background-color: #243b55;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .header p {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #cccccc;
+        }
+
+        .navbar {
+            background-color: #172b40;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 8px 12px;
+            display: inline-block;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .skills li {
+            background-color: #e8f0fa;
+            color: #243b55;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        .project {
+            border-left: 4px solid #4a90e2;
+            padding: 10px 18px;
+            margin-bottom: 20px;
+            background-color: #f8faff;
+        }
+
+        .project a {
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th {
+            background-color: #243b55;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #e8f0fa;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 18px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #243b55;
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer {
+            background-color: #243b55;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .header-content {
+    max-width: 950px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    text-align: left;
+}
+
+.profile-photo img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 4px solid white;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.header-text h1 {
+    text-align: left;
+    padding: 0;
+}
+
+.header-text p {
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .header-text h1,
+    .header-text p {
+        text-align: center;
+    }
+}
+        .footer p {
+            text-align: center;
+        }
+
+        /* ID selector */
+        #contact {
+            scroll-margin-top: 80px;
+        }
+
+        #certifications li,
+        #internships li,
+        #strengths li {
+            margin-bottom: 8px;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .navbar a {
+                margin: 5px;
+            }
+
+            table {
+                font-size: 13px;
+            }
+
+            th, td {
+                padding: 7px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+    <div class="header-content">
+
+        <div class="profile-photo">
+            <img src="profile.jpg" alt="Mahalakshmi Profile Photo">
+        </div>
+
+        <div class="header-text">
+            <h1 id="welcome"></h1>
+            <p id="intro"></p>
+            <p>Computer Science Graduate | MCA Student | Aspiring IT Professional</p>
+
+            <a class="button" href="#contact">Contact Me</a>
+            <a class="button" id="githubButton"
+               href="#" target="_blank">GitHub Profile</a>
+               <a class="button" href="https://www.linkedin.com/in/mahalakshmi-mohan-b13206321" target="_blank">
+                LinkedIn Profile</a>
+        </div>
+
+    </div>
+</div>
+    <!-- Navigation -->
+    <div class="navbar">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skillsSection">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#internships">Internships</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="container">
+
+        <!-- About Me -->
+        <div class="card" id="about">
+            <h2>About Me</h2>
+            <p id="aboutData"></p>
+
+            <h3>Career Objective</h3>
+            <p id="objectiveData"></p>
+        </div>
+
+        <!-- Education -->
+        <div class="card" id="education">
+            <h2>Academic Qualifications</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Institution</th>
+                        <th>Year</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+                <tbody id="eduData"></tbody>
+            </table>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="card" id="skillsSection">
+            <h2>Technical Skills</h2>
+            <ul class="skills" id="technicalSkills"></ul>
+
+            <h2>Personal Strengths</h2>
+            <ul id="strengths"></ul>
+        </div>
+
+        <!-- Projects -->
+        <div class="card" id="projects">
+            <h2>My Projects</h2>
+            <div id="projectsData"></div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="card" id="certifications">
+            <h2>Certifications</h2>
+            <ul id="certificationData"></ul>
+        </div>
+
+        <!-- Internships -->
+        <div class="card" id="internships">
+            <h2>Internship Experience</h2>
+            <div id="internshipData"></div>
+        </div>
+
+        <!-- Languages -->
+        <div class="card" id="languages">
+            <h2>Languages Known</h2>
+            <ul id="languageData"></ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="card" id="contact">
+            <h2>Contact Me</h2>
+            <p><b>Email:</b>
+                <a id="emailLink" href="#"></a>
+            </p>
+
+            <p><b>Phone:</b>
+                <a id="phoneLink" href="#"></a>
+            </p>
+
+            <p><b>LinkedIn:</b>
+                <a id="linkedinLink" href="#" target="_blank"
+                   rel="noopener noreferrer">Visit LinkedIn Profile</a>
+            </p>
+
+            <p><b>GitHub:</b>
+                <a id="githubLink" href="#" target="_blank"
+                   rel="noopener noreferrer">Visit GitHub Profile</a>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Thank you for visiting my portfolio!</p>
+        <p>&copy; <span id="currentYear"></span> Mahalakshmi M</p>
+    </div>
+
+    <script>
+        // Personal details
+        const personal = {
+            name: "Mahalakshmi M",
+            email: "mahalakshmim22cs042@gmail.com",
+            phone: "9344480177",
+            linkedin: "https://www.linkedin.com/in/mahalakshmi-mohan-b13206321",
+            github: "https://github.com/Mahalakshmi-M22cs042"
+        };
+
+        // Header content
+        document.getElementById("welcome").textContent =
+            "Welcome to My Portfolio";
+
+        document.getElementById("intro").textContent =
+            `Hello! I am ${personal.name}.`;
+
+        // About me
+        const aboutMe =
+            "I am a motivated and dedicated B.Sc. Computer Science graduate " +
+            "currently pursuing MCA at S.A. Engineering College. I have a " +
+            "foundation in programming, databases, and software development. " +
+            "I am interested in learning new technologies and developing " +
+            "useful software applications.";
+
+        document.getElementById("aboutData").textContent = aboutMe;
+
+        // Career objective from resume
+        const objective =
+            "To secure an entry-level role in the IT industry where I can " +
+            "utilize my technical knowledge, programming skills, and " +
+            "problem-solving abilities while contributing to the success " +
+            "of the organization.";
+
+        document.getElementById("objectiveData").textContent = objective;
+
+        // Education details
+        const education = [
+            {
+                course: "MCA (Pursuing)",
+                institution: "S.A. Engineering College",
+                year: "2025–2027",
+                percentage: "Pursuing"
+            },
+            {
+                course: "B.Sc. Computer Science",
+                institution: "Valliammal College for Women",
+                year: "2022–2025",
+                percentage: "81%"
+            },
+            {
+                course: "HSC",
+                institution: "Muruga Dhanushkodi Girls Hr. Sec. School",
+                year: "2022",
+                percentage: "78%"
+            },
+            {
+                course: "SSLC",
+                institution: "Muruga Dhanushkodi Girls Hr. Sec. School",
+                year: "2020",
+                percentage: "68%"
+            }
+        ];
+
+        document.getElementById("eduData").innerHTML =
+            education.map(edu => `
+                <tr>
+                    <td>${edu.course}</td>
+                    <td>${edu.institution}</td>
+                    <td>${edu.year}</td>
+                    <td>${edu.percentage}</td>
+                </tr>
+            `).join("");
+
+        // Technical skills
+        const skills = [
+            "Python",
+            "Java Fundamentals",
+            "Cybersecurity",
+            "RDBMS",
+            "HTML",
+            "JavaScript",
+            "SQL"
+        ];
+
+        document.getElementById("technicalSkills").innerHTML =
+            skills.map(skill => `<li>${skill}</li>`).join("");
+
+        // filter() example
+        const programmingSkills = skills.filter(skill =>
+            ["Python", "Java Fundamentals", "JavaScript"].includes(skill)
+        );
+
+        console.log("Programming Skills:", programmingSkills);
+
+        // Personal strengths
+        const strengths = [
+            "Self-confidence",
+            "Self-motivation",
+            "Quick learner",
+            "Hardworking"
+        ];
+
+        document.getElementById("strengths").innerHTML =
+            strengths.map(strength => `<li>${strength}</li>`).join("");
+
+        // Projects
+        const projects = [
+    {
+        title: "Base Converter Using Python Tkinter",
+        description: "Developed a number base conversion application using Python Tkinter, with input validation and error handling.",
+        link: "https://github.com/Mahalakshmi-M22cs042/Mahalakshmi.M_0577D3E6E4AC6C9B9B44C57015397B24"
+    },
+    {
+        title: "Cookbook Application – Naan Mudhalvan",
+        description: "Developed a Cookbook application to explore recipes, ingredients, and preparation steps.",
+        link: "https://github.com/Mahalakshmi-M22cs042/Cookbook_Mahalakshmi"
+    },
+    {
+        title: "AI-Based Campus Placement Management System",
+        description: "Developing a placement management system using Django and MySQL, with resume analysis and skill gap analysis.",
+        link: "https://github.com/Mahalakshmi-M22cs042/AI-CPMS"
+    }
+];
+
+document.getElementById("projectsData").innerHTML =
+    projects.map((project, index) => `
+        <div class="project">
+            <h3>Project ${index + 1}: ${project.title}</h3>
+            <p>${project.description}</p>
+            <a href="${project.link}"
+               target="_blank"
+               rel="noopener noreferrer">
+                View Repository
+            </a>
+        </div>
+    `).join("");
+        // find() example
+        const foundProject = projects.find(project =>
+            project.title.includes("Base Converter")
+        );
+
+        console.log("Found Project:", foundProject);
+
+        // Certifications from resume
+        const certifications = [
+            "Programming Essentials in Python",
+            "Programming with Python for Data Science",
+            "SQL – Basics (Standards)",
+            "Operating System and Linux Security",
+            "Fundamentals of Generative AI",
+            "Naan Mudhalvan: Front End Development and Database Administration",
+            "Naan Mudhalvan: MERN Stack with MongoDB",
+            "Naan Mudhalvan: Oracle Cloud Architecture",
+            "Naan Mudhalvan: Oracle Cloud Infrastructure Foundations Associate",
+            "Naan Mudhalvan: Fundamentals of Coding and Cloud",
+            "Overview of English Language Communication Assessment and Certification from Cambridge"
+        ];
+
+        document.getElementById("certificationData").innerHTML =
+            certifications.map(certification =>
+                `<li>${certification}</li>`
+            ).join("");
+
+        // Internships
+        const internships = [
+            {
+                role: "Web Development Intern",
+                company: "Prodigy InfoTech",
+                description:
+                    "Completed a web development internship."
+            },
+            {
+                role: "Full Stack Development Intern",
+                company: "Codveda Technologies",
+                description:
+                    "Completed a full-stack development internship."
+            }
+        ];
+
+        document.getElementById("internshipData").innerHTML =
+            internships.map(internship => `
+                <div class="project">
+                    <h3>${internship.role}</h3>
+                    <p><b>Organization:</b> ${internship.company}</p>
+                    <p>${internship.description}</p>
+                </div>
+            `).join("");
+
+        // Languages
+        const languages = ["English", "Tamil"];
+
+        document.getElementById("languageData").innerHTML =
+            languages.map(language => `<li>${language}</li>`).join("");
+
+        // Contact details
+        document.getElementById("emailLink").textContent = personal.email;
+        document.getElementById("emailLink").href =
+            `mailto:${personal.email}`;
+
+        document.getElementById("phoneLink").textContent = personal.phone;
+        document.getElementById("phoneLink").href =
+            `tel:${personal.phone}`;
+
+        document.getElementById("linkedinLink").href = personal.linkedin;
+        document.getElementById("githubLink").href = personal.github;
+        document.getElementById("githubButton").href = personal.github;
+
+        // Current year
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+
+        // Education filter example
+        const schoolEducation = education.filter(edu =>
+            edu.course === "HSC" || edu.course === "SSLC"
+        );
+
+        console.log("School Education:", schoolEducation);
+
+        // Education find example
+        const mcaDetails = education.find(edu =>
+            edu.course.includes("MCA")
+        );
+
+        console.log("MCA Details:", mcaDetails);
+    </script>
+
+</body>
+</html>
