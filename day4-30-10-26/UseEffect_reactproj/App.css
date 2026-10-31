@@ -1,0 +1,82 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0f172a;
+  color: white;
+}
+
+header {
+  font-family: "Trebuchet MS", sans-serif;
+  font-style: italic;
+  text-align: center;
+  padding: 25px;
+  background-color: #1e293b;
+  border-bottom: 2px solid #38bdf8;
+}
+
+header h1 {
+  color: #38bdf8;
+  font-size: 32px;
+}
+
+.user-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  padding: 30px;
+}
+
+.user-card {
+  background-color: #1e293b;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid #334155;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  border-color: #38bdf8;
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.2);
+}
+
+.user-card h2 {
+  color: #38bdf8;
+  font-size: 23px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #475569;
+}
+
+.user-card h3 {
+  color: #a78bfa;
+  margin: 22px 0 15px;
+  font-size: 17px;
+  border-bottom: 1px solid #475569;
+  padding-bottom: 8px;
+}
+
+.user-card p {
+  color: #cbd5e1;
+  font-size: 14px;
+  margin: 12px 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.user-card b {
+  color: #f8fafc;
+}
+
+@media (max-width: 800px) {
+  .user-container {
+    grid-template-columns: 1fr;
+  }
+}
